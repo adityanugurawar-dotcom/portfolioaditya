@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aditya Portfolio</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            display: flex;
+            background: #0b1a2f;
+            color: white;
+        }
+
+       
+        .drops-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+            scrollbar-darkshadow-color: aqua;
+        }
+
+        .drops-bg span {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: #38bdf8;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: fall linear infinite;
+            box-shadow: 0 0 10px #38bdf8;
+        }
+
+        .drops-bg span:nth-child(1) {
+            left: 10%;
+            animation-duration: 6s;
+        }
+
+        .drops-bg span:nth-child(2) {
+            left: 25%;
+            animation-duration: 8s;
+        }
+
+        .drops-bg span:nth-child(3) {
+            left: 40%;
+            animation-duration: 5s;
+        }
+
+        .drops-bg span:nth-child(4) {
+            left: 55%;
+            animation-duration: 7s;
+        }
+
+        .drops-bg span:nth-child(5) {
+            left: 70%;
+            animation-duration: 6s;
+        }
+
+        .drops-bg span:nth-child(6) {
+            left: 80%;
+            animation-duration: 9s;
+        }
+
+        .drops-bg span:nth-child(7) {
+            left: 90%;
+            animation-duration: 7s;
+        }
+
+        .drops-bg span:nth-child(8) {
+            left: 50%;
+            animation-duration: 6s;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -10px;
+                opacity: 0;
+            }
+
+            30% {
+                opacity: 1;
+            }
+
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+  
+        .sidebar {
+            width: 250px;
+            background: #111827;
+            padding: 20px;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+    
+        .profile-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #38bdf8;
+            object-fit: cover;
+            margin-bottom: 15px;
+            transition: 0.4s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px #38bdf8, 0 0 50px #38bdf8;
+        }
+
+        
+        .sidebar h2 {
+            margin: 10px 0;
+        }
+
+        .sidebar .role {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .sidebar .enroll {
+            margin-bottom: 20px;
+        }
+
+        
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+            cursor: pointer;
+        }
+
+        
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        
+        .hero img {
+            width: 100%;
+            max-width: 1200px;
+            border-radius: 10px;
+        }
+
+        
+        section {
+            width: 80%;
+            max-width: 700px;
+            margin-top: 30px;
+        }
+
+    
+        .card {
+            background: #1e293b;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+       
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background: #38bdf8;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .card:hover{
+             transform: scale(1.1);
+            box-shadow: 0 0 25px #38bdf8, 0 0 50px #38bdf8;
+        }
+        .enroll:hover{
+             transform: scale(1.0);
+            box-shadow: 0 0 25px #38bdf8, 0 0 50px #38bdf8;
+            
+        }
+        .role:hover{
+             transform: scale(1.1);
+            box-shadow: 0 0 25px #38bdf8, 0 0 50px #38bdf8;
+        }
+        li:hover{
+             transform: scale(1.0);
+            box-shadow: 0 0 25px #38bdf8, 0 0 50px #38bdf8;
+        }
+        h2:hover{
+             transform: scale(1.0);
+            box-shadow: 0 0 25px #38bdf8, 0 0 50px #38bdf8;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="drops-bg">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    
+    <div class="sidebar">
+
+        <div class="profile-container">
+            <img src="adi copy.jpeg" alt="Profile" class="profile-img">
+        </div>
+
+        <h2>NUGURWAR ADITYA</h2>
+        <p class="role"> WEB DEVELOPER</p>
+        <p class="enroll">Enrollment: 2503031260198</p>
+
+        <ul>
+            <li onclick="scrollToSection('home')">Home</li>
+            <li onclick="scrollToSection('about')">About</li>
+            <li onclick="scrollToSection('education')">Education</li>
+            <li onclick="scrollToSection('projects')">Projects</li>
+            <li onclick="scrollToSection('contact')">Contact</li>
+        </ul>
+    </div>
+    <div class="main-content">
+
+        <div class="hero" id="home">
+            <img src="AditayDeveloper.jpeg" alt="Banner">
+        </div>
+
+        <section>
+            <h1>Welcome to My Portfolio</h1>
+            <p>I build  web pages 🚀</p>
+        </section>
+
+        <section id="about">
+            <div class="card">
+                <h1>About</h1>
+            <p>Hi, I'm Aditya Nugurwar</p>
+            <p>I am a passionate Frontend Developer who loves creating beautiful, responsive, and user-friendly websites. I focus on
+            building modern web interfaces using clean design and smooth user experience.</p>
+            <p>I enjoy turning ideas into interactive digital experiences using HTML, CSS, JavaScript, and modern frontend tools. I
+            always try to make websites fast, visually appealing, and easy to use.</p>
+            <p>⚡ Skills:
+            • HTML, CSS, JavaScript
+            • Responsive Web Design
+        .c,c++</p>
+        <p>Currently:
+        • Learning MERN STACK
+    .Learning JAVA</p>
+        </div>
+        </section>
+
+        <section id="education">
+
+            <div class="card"><H1>🎓 Education</H1>
+            <P>
+            Higher Secondary (12th Grade)
+            LRB junior college patanbori,disitic:yavtamal 
+        
+            Year: 2023 – 2025;
+            </P>
+            <p>Secondary School (10th Grade)
+            janta High School patanbori disitic:yavatmal;
+            Year: 2022 – 2023</p>
+            <p>🎓 Currently studying at parul university Engineering and technology</p>
+
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="card">Portfolio Website</div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button onclick="sendMessage()">Send</button>
+        </section>
+
+    </div>
+
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function sendMessage() {
+            alert("Message Sent Successfully!");
+        }
+    </script>
+
+</body>
+
+</html>
